@@ -10,7 +10,9 @@ Welcome to zh_CN-Sphinx-doc's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   usage/installation
+   usage/quickstart
+   usage/restructuredtext/index
 
 Indices and tables
 ==================
