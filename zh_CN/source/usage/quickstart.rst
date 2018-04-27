@@ -30,40 +30,37 @@ Sphinx 提供一个叫做 :program:`sphinx-quickstart` 的脚本，它将帮助�
 定义文档结构
 ---------------------------
 
-Let's assume you've run :program:`sphinx-quickstart`.  It created a source
-directory with :file:`conf.py` and a master document, :file:`index.rst` (if you
-accepted the defaults).  The main function of the :term:`master document` is to
-serve as a welcome page, and to contain the root of the "table of contents
-tree" (or *toctree*).  This is one of the main things that Sphinx adds to
-reStructuredText, a way to connect multiple files to a single hierarchy of
-documents.
+假定你已经运行了 :program:`sphinx-quickstart` 。
+它创建了一个包含配置文件 :file:`conf.py` 和一个主文档 :file:`index.rst` 的源目录（如果你接受了默认选项）。
+主文档 (:term:`master document`) 的主要作用乃是作为一个导航欢迎页面，它包含一个“根目录表”（ table of contents
+tree (或 *toctree*) ）。
+这是 Sphinx 对 reStructuredText 的一项主要扩展。
+Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相关联。
 
-.. sidebar:: reStructuredText directives
+.. sidebar:: reStructuredText directives （指令）
 
-   ``toctree`` is a reStructuredText :dfn:`directive`, a very versatile piece
-   of markup.  Directives can have arguments, options and content.
+   ``toctree`` 是 reStructuredText 的一个指令（ :dfn:`directive` ），一种用途十分广泛的标记。
+   指令（ Directives ）可以有参数（ Arguments ）、选项（ Options ）和内容（ Contents ）。
 
-   *Arguments* are given directly after the double colon following the
-   directive's name.  Each directive decides whether it can have arguments, and
-   how many.
+   *参数*（ *Arguments* ）直接在紧跟指令名称的双冒号后面给出。
+   每一个指令决定自身是否可以有参数，有几个参数。
 
-   *Options* are given after the arguments, in form of a "field list".  The
-   ``maxdepth`` is such an option for the ``toctree`` directive.
+   *选项*（ *Options* ）则跟在参数后面，以“字段列表”（ "field list" ）的形式给出。
+   比如 ``maxdepth`` 就是指令 ``toctree`` 的一个选项。
 
-   *Content* follows the options or arguments after a blank line.  Each
-   directive decides whether to allow content, and what to do with it.
+   *内容*（ *Content* ）在最后给出，并与选项或参数（没有选项时）隔一个空行。
+   每一个指令决定自身是否允许有内容，以及要如何处理内容。
 
-   A common gotcha with directives is that **the first line of the content must
-   be indented to the same level as the options are**.
+   关于指令，一个容易出错的地方是，我们约定 **内容的第一行应与选项保持相同的缩进**。
 
-The ``toctree`` directive initially is empty, and looks like so:
+指令 ``toctree`` 一开始是空的，就像下面这样：
 
 .. code-block:: rest
 
    .. toctree::
       :maxdepth: 2
 
-You add documents listing them in the *content* of the directive:
+在指令内容（ *content* ）的位置，你可以通过添加文件的相对路径及名称来添加文档，如下所示，
 
 .. code-block:: rest
 
@@ -74,19 +71,17 @@ You add documents listing them in the *content* of the directive:
       usage/quickstart
       ...
 
-This is exactly how the ``toctree`` for this documentation looks.  The
-documents to include are given as :term:`document name`\ s, which in short
-means that you leave off the file name extension and use forward slashes
-(``/``) as directory separators.
+这也正是本文档指令 ``toctree`` 的样子。
+所有要被添加的文档都以如下“路径加名称” :term:`document name`\ s 的方式被列出。
+简单说，文档名去掉后缀，路径则以反斜线作为目录的分隔符。
 
-|more| Read more about :ref:`the toctree directive <toctree-directive>`.
 
-You can now create the files you listed in the ``toctree`` and add content, and
-their section titles will be inserted (up to the ``maxdepth`` level) at the
-place where the ``toctree`` directive is placed.  Also, Sphinx now knows about
-the order and hierarchy of your documents.  (They may contain ``toctree``
-directives themselves, which means you can create deeply nested hierarchies if
-necessary.)
+|more| 更多内容请参考 :ref:`the toctree directive <toctree-directive>`.
+
+现在，你可以创建被指令 ``toctree`` 列出的文档了，并向这些文档添加内容。
+文档的章节标题（ 直到由 maxdepth 指定的深度）都将被插入到指令 ``toctree`` 的位置上去。
+
+此时， Sphinx 就已经明白了你各个文档的顺序与其中的层级结构。（这些被插入的文档也可以有自己的 ``toctree`` 指令，也就是说，如有必要，通过这种方式，你可以创建嵌套很深的层级结构。）
 
 
 添加内容

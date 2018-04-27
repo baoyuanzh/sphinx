@@ -11,7 +11,8 @@ directory 目录
 configuration 配置
 document 文件 
 documentation 文档
-
+run 运行
+hierarchy 层级结构
 
 
 参考《Sphinx 使用手册》 http://zh-sphinx-doc.readthedocs.io/en/latest/tutorial.html
