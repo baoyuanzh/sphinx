@@ -98,43 +98,38 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 |more| 请参考 :doc:`/usage/restructuredtext/index` ，这里关于 reStructuredText 的介绍更深入，并包括由 Sphinx 添加的标记。
 
 
-运行 build 程序
+构建（ build ）文档
 -----------------
 
-Now that you have added some files and content, let's make a first build of the
-docs.  A build is started with the :program:`sphinx-build` program:
+现在假定你已经添加了一些源文件并有了一定的内容，让我们一起来看看在此基础上如何构建文档。
+构建过程从调用 :program:`sphinx-build` 工具开始：
 
 .. code-block:: shell
 
    $ sphinx-build -b html sourcedir builddir
 
-where *sourcedir* is the :term:`source directory`, and *builddir* is the
-directory in which you want to place the built documentation.
-The :option:`-b <sphinx-build -b>` option selects a builder; in this example
-Sphinx will build HTML files.
+其中， *sourcedir* 是源目录（ :term:`source directory` ）， *builddir* 则是用来存放输出文档的目录。
+选项 :option:`-b <sphinx-build -b>` 选择一个构建类型；在这个例子中，Sphinx 将生成 HTML 类型的文档。
 
-|more| Refer to the :program:`sphinx-build man page <sphinx-build>` for all
-options that :program:`sphinx-build` supports.
+|more| 请参考 :program:`sphinx-build man page <sphinx-build>` 以了解 :program:`sphinx-build` 所支持的所有选项。
 
-However, :program:`sphinx-quickstart` script creates a :file:`Makefile` and a
-:file:`make.bat` which make life even easier for you. These can be executed by
-running :command:`make` with the name of the builder. For example.
+不过，由 :program:`sphinx-quickstart` 脚本创建的 :file:`Makefile` 文件和 :file:`make.bat` 文件将使得构建文档这一操作变得更加简单。
+你可以用命令 :command:`make` 指定构建类型来创建文档。
+比如，
 
 .. code-block:: shell
 
    $ make html
 
-This will build HTML docs in the build directory you chose. Execute
-:command:`make` without an argument to see which targets are available.
+该命令将在你选择的文档输出目录中构建 HTML 文档。
+不添加任何构建类型来运行 :command:`make` 命令可以查看有哪些可选的类型。
 
-.. admonition:: How do I generate PDF documents?
+.. admonition:: 如何生成 PDF 文档？
 
-   ``make latexpdf`` runs the :mod:`LaTeX builder
-   <sphinx.builders.latex.LaTeXBuilder>` and readily invokes the pdfTeX
-   toolchain for you.
+   ``make latexpdf`` 运行 :mod:`LaTeX builder <sphinx.builders.latex.LaTeXBuilder>` 并为你无缝调用 pdfTeX 的工具链。
 
 
-.. todo:: Move this whole section into a guide on rST or directives
+.. todo:: 将本节全部移至 rST 的一个指南或者 directives 中。
 
 为 objects 编写说明
 -------------------
