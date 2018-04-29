@@ -81,24 +81,21 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 现在，你可以创建被指令 ``toctree`` 列出的文档了，并向这些文档添加内容。
 文档的章节标题（ 直到由 maxdepth 指定的深度）都将被插入到指令 ``toctree`` 的位置上去。
 
-此时， Sphinx 就已经明白了你各个文档的顺序与其中的层级结构。（这些被插入的文档也可以有自己的 ``toctree`` 指令，也就是说，如有必要，通过这种方式，你可以创建嵌套很深的层级结构。）
+此时， Sphinx 就已经明白了你的项目中各个文档的顺序关系与其中的层级结构。（这些被插入的文档也可以有自己的 ``toctree`` 指令，也就是说，如有必要，通过这种方式，你可以创建嵌套很深的层级结构。）
 
 
 添加内容
 --------------
 
-In Sphinx source files, you can use most features of standard
-:term:`reStructuredText`.  There are also several features added by Sphinx.
-For example, you can add cross-file references in a portable way (which works
-for all output types) using the :rst:role:`ref` role.
+在 Sphinx 源文件中，你可以使用标准 :term:`reStructuredText` 的大多数特性。
+而其他一些特性则是由 Sphinx 添加的。
+例如，你可以用 :rst:role:`ref` 角色（role）以一种可移植的方式添加跨文件的交叉引用（对所有输出类型均有效）。
 
-For an example, if you are viewing the HTML version you can look at the source
-for this document -- use the "Show Source" link in the sidebar.
+再比如，在阅读 HTML 类型的输出中，如果你想查看当前文档的源文件，只需要点击边框栏中的 "Show Source" （“显示源代码”）即可。
 
-.. todo:: Update the below link when we add new guides on these.
+.. todo:: 这部分添加新的指南后，更新一下链接。
 
-|more| See :doc:`/usage/restructuredtext/index` for a more in-depth
-introduction to reStructuredText, including markup added by Sphinx.
+|more| 请参考 :doc:`/usage/restructuredtext/index` ，这里关于 reStructuredText 的介绍更深入，并包括由 Sphinx 添加的标记。
 
 
 运行 build 程序
