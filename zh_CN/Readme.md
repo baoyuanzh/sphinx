@@ -16,5 +16,7 @@
 + sidebar 边框栏
 + build 构建，创建
 + builder 构建类型
++ domain 领域
++ directive 指令
 
 参考《Sphinx 使用手册》 http://zh-sphinx-doc.readthedocs.io/en/latest/tutorial.html

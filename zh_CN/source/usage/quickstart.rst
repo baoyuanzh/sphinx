@@ -42,7 +42,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
    ``toctree`` 是 reStructuredText 的一个指令（ :dfn:`directive` ），一种用途十分广泛的标记。
    指令（ Directives ）可以有参数（ Arguments ）、选项（ Options ）和内容（ Contents ）。
 
-   *参数*（ *Arguments* ）直接在紧跟指令名称的双冒号后面给出。
+   *参数*（ *Arguments* ）在紧跟指令名称的双冒号后面直接给出。
    每一个指令决定自身是否可以有参数，有几个参数。
 
    *选项*（ *Options* ）则跟在参数后面，以“字段列表”（ "field list" ）的形式给出。
@@ -131,17 +131,15 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 
 .. todo:: 将本节全部移至 rST 的一个指南或者 directives 中。
 
-为 objects 编写说明
+为对象（ objects ）编写文档
 -------------------
 
-One of Sphinx's main objectives is easy documentation of :dfn:`objects` (in a
-very general sense) in any :dfn:`domain`.  A domain is a collection of object
-types that belong together, complete with markup to create and reference
-descriptions of these objects.
+Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域）中，（极为宽泛意义下的对象） :dfn:`objects` 编写文档。
+领域（ domain ）是众多对象类型（ object types ）的汇总，它们都属于这个整体。
+作为完整的对象，它们有用以创建的标记和可以引用参考的说明。
 
-The most prominent domain is the Python domain. For example, to document
-Python's built-in function ``enumerate()``, you would add this to one of your
-source files.
+一个最为突出的领域是 Python 域。
+例如，要为 Python 的內建函数 ``enumerate()`` 编写文档，你可以把如下的几行文字添加到某个源文件中。
 
 .. code-block:: restructuredtext
 
@@ -150,19 +148,17 @@ source files.
       Return an iterator that yields tuples of an index and an item of the
       *sequence*. (And so on.)
 
-This is rendered like this:
+上面的文字将被渲染成如下样式：
 
 .. py:function:: enumerate(sequence[, start=0])
 
    Return an iterator that yields tuples of an index and an item of the
    *sequence*. (And so on.)
 
-The argument of the directive is the :dfn:`signature` of the object you
-describe, the content is the documentation for it.  Multiple signatures can be
-given, each in its own line.
+以上指令（ directive ）的参数是你要描述的对象（ object ）的签名（ :dfn:`signature` ），指令的内容则是对象（ object ）的文档。
+可以指定多个签名（ signatures ），一个一行。
 
-The Python domain also happens to be the default domain, so you don't need to
-prefix the markup with the domain name.
+事实上， Python 域就是 Sphinx 的默认域，所以作为指令前缀的域的名称并不是必要的，
 
 .. code-block:: restructuredtext
 
@@ -170,29 +166,27 @@ prefix the markup with the domain name.
 
       ...
 
-does the same job if you keep the default setting for the default domain.
+如果你保持默认设定和默认域不变，那么省去前缀的这个写法和完整写法的效果是一样的。
 
-There are several more directives for documenting other types of Python
-objects, for example :rst:dir:`py:class` or :rst:dir:`py:method`.  There is
-also a cross-referencing :dfn:`role` for each of these object types.  This
-markup will create a link to the documentation of ``enumerate()``.
+为 Python 其他类型的对象编写文档，我们需要更多的指令（ directives ）。
+比如有 :rst:dir:`py:class` 和 :rst:dir:`py:method`。
+针对每一个这样的对象类型，我们还有一些对应的用于交叉引用的角色（ :dfn:`role` ）。
+如下标记将创建一个跳转到函数 ``enumerate()`` 的文档的一个链接。
 
 ::
 
    The :py:func:`enumerate` function can be used for ...
 
-And here is the proof: A link to :func:`enumerate`.
+这里有一个演示：请尝试点击 :func:`enumerate`.
 
-Again, the ``py:`` can be left out if the Python domain is the default one.  It
-doesn't matter which file contains the actual documentation for
-``enumerate()``; Sphinx will find it and create a link to it.
+同样的, 在 Python 域是默认域的前提下，前缀 ``py:`` 可以省略。
+具体是哪一个源文件包含了函数 ``enumerate()`` 的文档并不重要；
+重要的是 Sphinx 能够找到它并自动创建指向它的链接。
 
-Each domain will have special rules for how the signatures can look like, and
-make the formatted output look pretty, or add specific features like links to
-parameter types, e.g. in the C/C++ domains.
+每一个领域（ domain ）各自都有一些特殊的规则。
+比如关于合法的签名长什么样子，如何让渲染输出的格式更美观，以及一些独有的特性，像是可以生成跳转到参数类型的文档的链接，例如在 C/C++ 域中就有这样的特性。
 
-|more| See :doc:`/usage/restructuredtext/domains` for all the available domains
-and their directives/roles.
+|more| 请参考 :doc:`/usage/restructuredtext/domains` 以便获取所有可选的域（ domains ），以及域中相关指令/角色（ directives/roles ）的详细信息。
 
 
 基本配置
