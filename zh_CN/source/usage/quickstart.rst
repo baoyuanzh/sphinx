@@ -192,29 +192,29 @@ Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域�
 基本配置
 -------------------
 
-Earlier we mentioned that the :file:`conf.py` file controls how Sphinx
-processes your documents.  In that file, which is executed as a Python source
-file, you assign configuration values.  For advanced users: since it is
-executed by Sphinx, you can do non-trivial tasks in it, like extending
-:data:`sys.path` or importing a module to find out the version you are
-documenting.
+前面提到的配置文件 :file:`conf.py` 控制着 Sphinx 如何生成你的文档。
+而该文件其实是被当做 Python 源文件来运行你所指定的配置信息的。
+对于高级用户而言：由于配置文件可以被 Sphinx 运行的，你实际上可以完成一些复杂的任务。
+比如，扩展 :data:`sys.path` 或者导入一个模块来找出你正在编写文档的版本。
 
-The config values that you probably want to change are already put into the
-:file:`conf.py` by :program:`sphinx-quickstart` and initially commented out
-(with standard Python syntax: a ``#`` comments the rest of the line).  To
-change the default value, remove the hash sign and modify the value.  To
-customize a config value that is not automatically added by
-:program:`sphinx-quickstart`, just add an additional assignment.
+由 :program:`sphinx-quickstart` 生成的配置文件通常已包含大多数你想要修改的配置，只不过它们最初是被注释起来的（用的是标准的 Python 的语法：即以 ``#`` 注释掉当前行的剩余部分）。
+要修改默认值，只要去掉井号，然后替换成你期望值即可。
+要自定义一个 :program:`sphinx-quickstart` 没有自动生成的，新的配置，添加一个赋值语句就可以了。
 
-Keep in mind that the file uses Python syntax for strings, numbers, lists and
-so on.  The file is saved in UTF-8 by default, as indicated by the encoding
-declaration in the first line.  If you use non-ASCII characters in any string
-value, you need to use Python Unicode strings (like ``project = u'Exposé'``).
+要记住的是，该配置文件所使用的字符串、数字、列表等等都要符合 Python 的语法。
+此外，如第一行编码声明（实际观察发现是在第二行）所示，
 
-|more| See :ref:`build-config` for documentation of all available config values.
+::
+
+   # -*- coding: utf-8 -*-
+
+文件默认以 UTF-8 编码保存。
+如果你要使用非 ASCII 字符的字符串，那就得用 Python Unicode 字符串（像这样 ``project = u'Exposé'`` ）。
+
+|more| 请参考 :ref:`build-config` 以获取所有可选配置的信息。
 
 
-.. todo:: Move this entire doc to a different section
+.. todo:: 将这一部分完整转移到另一个章节
 
 Autodoc
 -------
