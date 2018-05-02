@@ -4,7 +4,7 @@
 
 一旦 Sphinx 已 :doc:`安装 </usage/installation>` 完成, 你就可以开始设置你的第一个 Sphinx 项目了。
 为简化启动流程，Sphinx 提供了一个实用工具 —— :program:`sphinx-quickstart`, 它将帮助你生成一个文档源目录，并在这一过程中提供一些默认参数。
-在这里，我们将演示如何使用该工具（ :program:`sphinx-quickstart` ），尽管这一步并不是必须的。
+在这里，我们将演示如何使用该工具 (:program:`sphinx-quickstart`) ，尽管这一步并不是必须的。
 
 
 设置文档源
@@ -32,23 +32,23 @@ Sphinx 提供一个叫做 :program:`sphinx-quickstart` 的脚本，它将帮助�
 
 假定你已经运行了 :program:`sphinx-quickstart` 。
 它创建了一个包含配置文件 :file:`conf.py` 和一个主文档 :file:`index.rst` 的源目录（如果你接受了默认选项）。
-主文档 (:term:`master document`) 的主要作用乃是作为一个导航欢迎页面，它包含一个“根目录表”（ table of contents
-tree (或 *toctree*) ）。
+主文档 (:term:`master document`) 的主要作用乃是作为一个导航欢迎页面，它包含一个“根目录表” (table of contents
+tree (或 *toctree*))。
 这是 Sphinx 对 reStructuredText 的一项主要扩展。
 Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相关联。
 
 .. sidebar:: reStructuredText directives （指令）
 
-   ``toctree`` 是 reStructuredText 的一个指令（ :dfn:`directive` ），一种用途十分广泛的标记。
-   指令（ Directives ）可以有参数（ Arguments ）、选项（ Options ）和内容（ Contents ）。
+   ``toctree`` 是 reStructuredText 的一个指令 (:dfn:`directive`) ，一种用途十分广泛的标记。
+   指令 (Directives) 可以有参数 (Arguments) 、选项 (Options) 和内容 (Contents) 。
 
-   *参数*（ *Arguments* ）在紧跟指令名称的双冒号后面直接给出。
+   *参数* (*Arguments*) 在紧跟指令名称的双冒号后面直接给出。
    每一个指令决定自身是否可以有参数，有几个参数。
 
-   *选项*（ *Options* ）则跟在参数后面，以“字段列表”（ "field list" ）的形式给出。
+   *选项* (*Options*) 则跟在参数后面，以“字段列表” ("field list") 的形式给出。
    比如 ``maxdepth`` 就是指令 ``toctree`` 的一个选项。
 
-   *内容*（ *Content* ）在最后给出，并与选项或参数（没有选项时）隔一个空行。
+   *内容* (*Content*) 在最后给出，并与选项或参数（没有选项时）隔一个空行。
    每一个指令决定自身是否允许有内容，以及要如何处理内容。
 
    关于指令，一个容易出错的地方是，我们约定 **内容的第一行应与选项保持相同的缩进**。
@@ -60,7 +60,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
    .. toctree::
       :maxdepth: 2
 
-在指令内容（ *content* ）的位置，你可以通过添加文件的相对路径及名称来添加文档，如下所示，
+在指令内容 (*content*) 的位置，你可以通过添加文件的相对路径及名称来添加文档，如下所示，
 
 .. code-block:: rest
 
@@ -79,7 +79,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 |more| 更多内容请参考 :ref:`the toctree directive <toctree-directive>`.
 
 现在，你可以创建被指令 ``toctree`` 列出的文档了，并向这些文档添加内容。
-文档的章节标题（ 直到由 maxdepth 指定的深度）都将被插入到指令 ``toctree`` 的位置上去。
+文档的章节标题（直到由 maxdepth 指定的深度）都将被插入到指令 ``toctree`` 的位置上去。
 
 此时， Sphinx 就已经明白了你的项目中各个文档的顺序关系与其中的层级结构。（这些被插入的文档也可以有自己的 ``toctree`` 指令，也就是说，如有必要，通过这种方式，你可以创建嵌套很深的层级结构。）
 
@@ -89,7 +89,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 
 在 Sphinx 源文件中，你可以使用标准 :term:`reStructuredText` 的大多数特性。
 而其他一些特性则是由 Sphinx 添加的。
-例如，你可以用 :rst:role:`ref` 角色（role）以一种可移植的方式添加跨文件的交叉引用（对所有输出类型均有效）。
+例如，你可以用 :rst:role:`ref` 角色 (role) 以一种可移植的方式添加跨文件的交叉引用（对所有输出类型均有效）。
 
 再比如，在阅读 HTML 类型的输出中，如果你想查看当前文档的源文件，只需要点击边框栏中的 "Show Source" （“显示源代码”）即可。
 
@@ -98,7 +98,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 |more| 请参考 :doc:`/usage/restructuredtext/index` ，这里关于 reStructuredText 的介绍更深入，并包括由 Sphinx 添加的标记。
 
 
-构建（ build ）文档
+构建 (build) 文档
 -----------------
 
 现在假定你已经添加了一些源文件并有了一定的内容，让我们一起来看看在此基础上如何构建文档。
@@ -108,7 +108,7 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 
    $ sphinx-build -b html sourcedir builddir
 
-其中， *sourcedir* 是源目录（ :term:`source directory` ）， *builddir* 则是用来存放输出文档的目录。
+其中， *sourcedir* 是源目录 (:term:`source directory`) ， *builddir* 则是用来存放输出文档的目录。
 选项 :option:`-b <sphinx-build -b>` 选择一个构建类型；在这个例子中，Sphinx 将生成 HTML 类型的文档。
 
 |more| 请参考 :program:`sphinx-build man page <sphinx-build>` 以了解 :program:`sphinx-build` 所支持的所有选项。
@@ -131,11 +131,11 @@ Sphinx 通过这种方式，将众多源文件与一个集中的层级结构相�
 
 .. todo:: 将本节全部移至 rST 的一个指南或者 directives 中。
 
-为对象（ objects ）编写文档
+为对象 (objects) 编写文档
 -------------------
 
 Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域）中，（极为宽泛意义下的对象） :dfn:`objects` 编写文档。
-领域（ domain ）是众多对象类型（ object types ）的汇总，它们都属于这个整体。
+领域 (domain) 是众多对象类型 (object types) 的汇总，它们都属于这个整体。
 作为完整的对象，它们有用以创建的标记和可以引用参考的说明。
 
 一个最为突出的领域是 Python 域。
@@ -155,8 +155,8 @@ Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域�
    Return an iterator that yields tuples of an index and an item of the
    *sequence*. (And so on.)
 
-以上指令（ directive ）的参数是你要描述的对象（ object ）的签名（ :dfn:`signature` ），指令的内容则是对象（ object ）的文档。
-可以指定多个签名（ signatures ），一个一行。
+以上指令（ directive ）的参数是你要描述的对象 (object) 的签名 (:dfn:`signature`) ，指令的内容则是对象 (object) 的文档。
+可以指定多个签名 (signatures) ，一个一行。
 
 事实上， Python 域就是 Sphinx 的默认域，所以作为指令前缀的域的名称并不是必要的，
 
@@ -168,9 +168,9 @@ Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域�
 
 如果你保持默认设定和默认域不变，那么省去前缀的这个写法和完整写法的效果是一样的。
 
-为 Python 其他类型的对象编写文档，我们需要更多的指令（ directives ）。
+为 Python 其他类型的对象编写文档，我们需要更多的指令 (directives) 。
 比如有 :rst:dir:`py:class` 和 :rst:dir:`py:method`。
-针对每一个这样的对象类型，我们还有一些对应的用于交叉引用的角色（ :dfn:`role` ）。
+针对每一个这样的对象类型，我们还有一些对应的用于交叉引用的角色 (:dfn:`role`) 。
 如下标记将创建一个跳转到函数 ``enumerate()`` 的文档的一个链接。
 
 ::
@@ -183,10 +183,10 @@ Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域�
 具体是哪一个源文件包含了函数 ``enumerate()`` 的文档并不重要；
 重要的是 Sphinx 能够找到它并自动创建指向它的链接。
 
-每一个领域（ domain ）各自都有一些特殊的规则。
+每一个领域 (domain) 各自都有一些特殊的规则。
 比如关于合法的签名长什么样子，如何让渲染输出的格式更美观，以及一些独有的特性，像是可以生成跳转到参数类型的文档的链接，例如在 C/C++ 域中就有这样的特性。
 
-|more| 请参考 :doc:`/usage/restructuredtext/domains` 以便获取所有可选的域（ domains ），以及域中相关指令/角色（ directives/roles ）的详细信息。
+|more| 请参考 :doc:`/usage/restructuredtext/domains` 以便获取所有可选的域 (domains) ，以及域中相关指令/角色 (directives/roles) 的详细信息。
 
 
 基本配置
@@ -209,55 +209,46 @@ Sphinx 的一个主要目标是能够容易地为任何 :dfn:`domain` （领域�
    # -*- coding: utf-8 -*-
 
 文件默认以 UTF-8 编码保存。
-如果你要使用非 ASCII 字符的字符串，那就得用 Python Unicode 字符串（像这样 ``project = u'Exposé'`` ）。
+如果你要使用非 ASCII 字符的字符串，那就得用 Python Unicode 字符串 (像这样 ``project = u'Exposé'``) 。
 
 |more| 请参考 :ref:`build-config` 以获取所有可选配置的信息。
 
 
 .. todo:: 将这一部分完整转移到另一个章节
 
-Autodoc
--------
+自动文档 (Autodoc)
+------------------
 
-When documenting Python code, it is common to put a lot of documentation in the
-source files, in documentation strings.  Sphinx supports the inclusion of
-docstrings from your modules with an :dfn:`extension` (an extension is a Python
-module that provides additional features for Sphinx projects) called *autodoc*.
+在给 Python 代码编写文档时，直接把大量的文档以文档字符串 (documentation strings) 的形式写在源代码文件中是非常常见的做法。
+Sphinx 中有一个叫做 *autodoc* 的扩展 (:dfn:`extension` 一个扩展就是为 Sphinx 项目提供附加功能的一个 Python 模块) 支持从你的模块中自动抓取这些文档字符串 (docstrings)。
 
-In order to use *autodoc*, you need to activate it in :file:`conf.py` by
-putting the string ``'sphinx.ext.autodoc'`` into the list assigned to the
-:confval:`extensions` config value.  Then, you have a few additional directives
-at your disposal.
+要使用 *autodoc* ，你必须在配置文件 :file:`conf.py` 中启用它。
+启用的方式是在配置项 :confval:`extensions` 列表里写上字符串 ``'sphinx.ext.autodoc'`` 。
+如此，你就有一些额外的相关指令可用了。
 
-For example, to document the function ``io.open()``, reading its signature and
-docstring from the source file, you'd write this::
+比如，要给函数 ``io.open()`` 添加文档，只需这样写，你就可以从源代码文件中读取它的签名以及文档字符串 ::
 
    .. autofunction:: io.open
 
-You can also document whole classes or even modules automatically, using member
-options for the auto directives, like ::
+你也可以通过使用带成员选项 (member oprtions) 的 auto 指令 (directives) 为一整个类或一整个模块自动提取文档，像这样 ::
 
    .. automodule:: io
       :members:
 
-*autodoc* needs to import your modules in order to extract the docstrings.
-Therefore, you must add the appropriate path to :py:data:`sys.path` in your
-:file:`conf.py`.
+为了能提取文档字符串 (docstrings) ， *autodoc* 需要导入你的模块。
+因此，你必须在你的配置文件 (:file:`conf.py`) 中给 :py:data:`sys.path` 添加适当的路径。
 
 .. warning::
 
-   :mod:`~sphinx.ext.autodoc` **imports** the modules to be documented.  If any
-   modules have side effects on import, these will be executed by ``autodoc``
-   when ``sphinx-build`` is run.
+   要使用 :mod:`~sphinx.ext.autodoc` ，则必须先 **导入** 要被提取文档的模块。
+   任何一个关于导入操作有副作用的模块，在 ``sphinx-build`` 运行时，这些副作用亦将被执行。
 
-   If you document scripts (as opposed to library modules), make sure their
-   main routine is protected by a ``if __name__ == '__main__'`` condition.
+   如果你要给脚本（与库模块不同）添加文档，请确保它们的主程序被条件测试 ``if __name__ == '__main__'`` 保护起来了。
 
-|more| See :mod:`sphinx.ext.autodoc` for the complete description of the
-features of autodoc.
+|more| 请参考 :mod:`sphinx.ext.autodoc` 以获取关于 autodoc 各项功能特性的完整描述。
 
 
-.. todo:: Move this doc to another section
+.. todo:: 将本节内容转移至另一个章节
 
 Intersphinx
 -----------

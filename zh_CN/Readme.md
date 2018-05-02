@@ -18,5 +18,9 @@
 + builder 构建类型
 + domain 领域
 + directive 指令
++ extension 扩展
++ docstrings 文档字符串
++ source 翻译成“源文件”指的是 reStructuredText 文件，翻译成“源代码文件”则指一般的代码文件，如 Python 的代码文件
+
 
 参考《Sphinx 使用手册》 http://zh-sphinx-doc.readthedocs.io/en/latest/tutorial.html
