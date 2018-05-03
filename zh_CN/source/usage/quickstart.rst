@@ -253,31 +253,22 @@ Sphinx 中有一个叫做 *autodoc* 的扩展 (:dfn:`extension` 一个扩展就�
 Intersphinx
 -----------
 
-Many Sphinx documents including the `Python documentation`_ are published on
-the internet.  When you want to make links to such documents from your
-documentation, you can do it with :mod:`sphinx.ext.intersphinx`.
+很多用 Sphinx 编写的文档，包括 `Python documentation`_ 都发布在网上。
+如果你想从自己的文档链接到那些文档的话，你可以利用该扩展 :mod:`sphinx.ext.intersphinx` 这样做，
 
 .. _Python documentation: https://docs.python.org/3
 
-In order to use intersphinx, you need to activate it in :file:`conf.py` by
-putting the string ``'sphinx.ext.intersphinx'`` into the :confval:`extensions`
-list and set up the :confval:`intersphinx_mapping` config value.
+要使用 intersphinx ，你必须在配置文件 :file:`conf.py` 中启用它，激活方式是在配置项 :confval:`extensions` 列表中添加字符串 ``'sphinx.ext.intersphinx'`` 并设定好配置 :confval:`intersphinx_mapping` 的值。
 
-For example, to link to ``io.open()`` in the Python library manual, you need to
-setup your :confval:`intersphinx_mapping` like::
+比如说，要链接到 Python library 的方法 ``io.open()`` 的手册，你需要将 :confval:`intersphinx_mapping` 配置成 ::
 
    intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
-And now, you can write a cross-reference like ``:py:func:`io.open```.  Any
-cross-reference that has no matching target in the current documentation set,
-will be looked up in the documentation sets configured in
-:confval:`intersphinx_mapping` (this needs access to the URL in order to
-download the list of valid targets).  Intersphinx also works for some other
-:term:`domain`\'s roles including ``:ref:``, however it doesn't work for
-``:doc:`` as that is non-domain role.
+现在，你就可以用 ``:py:func:`io.open``` 来交叉引用了。
+任何在当前的文档汇总中没有匹配的交叉引用都将在配置 :confval:`intersphinx_mapping` 设定的链接中查找（当然这需要访问链接来下载合法目标的列表）。
+也可以用 Intersphinx 来引用领域 (:term:`domain`) 角色 (roles)，包括 ``:ref:`` 角色，但却不能引用 ``:doc:`` ，因为这不是一个领域角色。
 
-|more| See :mod:`sphinx.ext.intersphinx` for the complete description of the
-features of intersphinx.
+|more| 请参考 :mod:`sphinx.ext.intersphinx` 以了解 intersphinx 各项功能的完整描述。
 
 
 更多主题
