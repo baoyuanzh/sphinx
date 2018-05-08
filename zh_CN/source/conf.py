@@ -39,6 +39,7 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
+    'sphinx.ext.extlinks',
     'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
@@ -151,11 +152,33 @@ latex_documents = [
      'Zhang Baoyuan', 'manual'),
 ]
 
+# -- Options for external links ---------------------------------------
+
+extlinks = {'duref': ('http://docutils.sourceforge.net/docs/ref/rst/'
+                      'restructuredtext.html#%s', ''),
+            'durole': ('http://docutils.sourceforge.net/docs/ref/rst/'
+                       'roles.html#%s', ''),
+            'dudir': ('http://docutils.sourceforge.net/docs/ref/rst/'
+                      'directives.html#%s', '')}
+
 
 # -- Options for manual page output ---------------------------------------
-
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
+
+# Original man pages for the sphinx-doc project
+#man_pages = [
+#    ('contents', 'sphinx-all', 'Sphinx documentation generator system manual',
+#     'Georg Brandl', 1),
+#    ('man/sphinx-build', 'sphinx-build', 'Sphinx documentation generator tool',
+#     '', 1),
+#    ('man/sphinx-quickstart', 'sphinx-quickstart', 'Sphinx documentation '
+#     'template generator', '', 1),
+#    ('man/sphinx-apidoc', 'sphinx-apidoc', 'Sphinx API doc generator tool',
+#     '', 1),
+#    ('man/sphinx-autogen', 'sphinx-autogen', 'Generate autodoc stub pages',
+#     '', 1),
+#]
 man_pages = [
     (master_doc, 'zh_cn-sphinx-doc', 'zh_CN-Sphinx-doc Documentation',
      [author], 1)

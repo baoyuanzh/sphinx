@@ -21,6 +21,7 @@
 + extension 扩展
 + docstrings 文档字符串
 + source 翻译成“源文件”指的是 reStructuredText 文件，翻译成“源代码文件”则指一般的代码文件，如 Python 的代码文件
++ inline markup 行内标记
++ literal blocks 字面块
 
-
-参考《Sphinx 使用手册》 http://zh-sphinx-doc.readthedocs.io/en/latest/tutorial.html
+参考《Sphinx 使用手册》 http://zh-sphinx-doc.readthedocs.io/en/latest/rest.html
