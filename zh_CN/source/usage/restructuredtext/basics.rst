@@ -149,10 +149,9 @@ block-by-block basis. These directives are discussed later.
 Doctest 块
 --------------
 
-Doctest blocks (:duref:`ref <doctest-blocks>`) are interactive Python sessions
-cut-and-pasted into docstrings. They do not require the
-:ref:`literal blocks <rst-literal-blocks>` syntax. The doctest block must end
-with a blank line and should *not* end with with an unused prompt::
+Doctest 块 (:duref:`ref <doctest-blocks>`) 表示一次与 Python 交互的对话，将被剪切复制到文档字符串中。
+它不需要按照字面块 :ref:`literal blocks <rst-literal-blocks>` 的语法来写，但却是一个特殊的字面块。
+Doctest 块必须以一个空行结束，且 *不能* 在文末跟随一个未使用的提示符::
 
     >>> 1 + 1
     2
