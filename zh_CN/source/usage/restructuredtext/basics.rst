@@ -52,9 +52,8 @@ reST 被设计成是简单易用的标记语言，学习它不会花太长时间
 列表及类引用块
 ---------------------------
 
-List markup (:duref:`ref <bullet-lists>`) is natural: just place an asterisk at
-the start of a paragraph and indent properly.  The same goes for numbered
-lists; they can also be autonumbered using a ``#`` sign::
+列表标记 (:duref:`ref <bullet-lists>`) 的使用形式是很自然的：只需要在每一段之前放一个星号并作适当缩进即可。
+顺序列表也是一样，用井号 ``#`` 可以自动生成数字序号 ::
 
    * This is a bulleted list.
    * It has two items, the second
@@ -66,8 +65,7 @@ lists; they can also be autonumbered using a ``#`` sign::
    #. This is a numbered list.
    #. It has two items too.
 
-Nested lists are possible, but be aware that they must be separated from the
-parent list items by blank lines::
+嵌套列表也是可行的，但是注意，它们必须用一个空行与父列表项目隔开 ::
 
    * this is
    * a list
@@ -77,7 +75,7 @@ parent list items by blank lines::
 
    * and here the parent list continues
 
-Definition lists (:duref:`ref <definition-lists>`) are created as follows::
+定义列表 (:duref:`ref <definition-lists>`) 按如下方式构造 ::
 
    term (up to a line of text)
       Definition of the term, which must be indented
@@ -87,24 +85,22 @@ Definition lists (:duref:`ref <definition-lists>`) are created as follows::
    next term
       Description.
 
-Note that the term cannot have more than one line of text.
+注意一个要定义的术语名称不能超过一行。
 
-Quoted paragraphs (:duref:`ref <block-quotes>`) are created by just indenting
-them more than the surrounding paragraphs.
+段落引用 (:duref:`ref <block-quotes>`) 的构造只需要比周围段落多缩进一些即可。
 
-Line blocks (:duref:`ref <line-blocks>`) are a way of preserving line breaks::
+行块 (line blocks) (:duref:`ref <line-blocks>`) 是用来保留断行文字的一种方式 ::
 
    | These lines are
    | broken exactly like in
    | the source file.
 
-There are also several more special blocks available:
+当然还有其他一些可用的块 (blocks) :
 
-* field lists (:duref:`ref <field-lists>`, with caveats noted in
-  :ref:`rst-field-lists`)
-* option lists (:duref:`ref <option-lists>`)
-* quoted literal blocks (:duref:`ref <quoted-literal-blocks>`)
-* doctest blocks (:duref:`ref <doctest-blocks>`)
+* 字段 (field) 列表 (:duref:`ref <field-lists>`, 及其注意事项 :ref:`rst-field-lists`)
+* 选项 (options) 列表 (:duref:`ref <option-lists>`)
+* 字面引用 (quoted literal) 块  (:duref:`ref <quoted-literal-blocks>`)
+* 文档测试 (doctest) 块 (:duref:`ref <doctest-blocks>`)
 
 
 .. _rst-literal-blocks:
@@ -112,36 +108,31 @@ There are also several more special blocks available:
 字面块
 --------------
 
-Literal code blocks (:duref:`ref <literal-blocks>`) are introduced by ending a
-paragraph with the special marker ``::``.  The literal block must be indented
-(and, like all paragraphs, separated from the surrounding ones by blank
-lines)::
+字面代码块 (:duref:`ref <literal-blocks>`) 在段落结束的地方用一个特别的标记 ``::`` 引入。
+字面代码块必须缩进，并且必须用一个空行与周围的段落隔开，就和其他所有的段落一样::
 
-   This is a normal text paragraph. The next paragraph is a code sample::
+   这是一个普通文本段落。下一个段落是代码字面::
 
       It is not processed in any way, except
       that the indentation is removed.
 
-      It can span multiple lines.
+      代码字面可以跨多行。
 
-   This is a normal text paragraph again.
+   这又是一个普通文本段落.
 
-The handling of the ``::`` marker is smart:
+对于标记 ``::`` 本身的处理是很优雅的：
 
-* If it occurs as a paragraph of its own, that paragraph is completely left out
-  of the document.
-* If it is preceded by whitespace, the marker is removed.
-* If it is preceded by non-whitespace, the marker is replaced by a single
-  colon.
+* 如果它本身作为一个段落出现，那么这个段落完全不会出现在文档中。
+* 如果它前面有一个空格，那么标记不会出现在文档中（如同被移除）。
+* 如果它前面是非空格字符，那么在文档中会用一个冒号来替代它。
 
-That way, the second sentence in the above example's first paragraph would be
-rendered as "The next paragraph is a code sample:".
+因而，上例中，第一个段落的第二个句子将呈现为这样的形式，“下一个段落是代码字面：”。
 
-Code highlighting can be enabled for these literal blocks on a document-wide
-basis using the :rst:dir:`highlight` directive and on a project-wide basis
-using the :confval:`highlight_language` configuration option. The
-:rst:dir:`code-block` directive can be used to set highlighting on a
-block-by-block basis. These directives are discussed later.
+在字面代码块中，代码高亮是可能的。
+用指令 :rst:dir:`highlight` 可以在单个文件范围内启用代码高亮
+要在项目范围内启用高亮，则需要设定 :confval:`highlight_language` 配置项。
+而指令 :rst:dir:`code-block` 则可以在特定的段落上启用代码高亮。
+这些指令稍后再讨论。
 
 
 .. _rst-doctest-blocks:
