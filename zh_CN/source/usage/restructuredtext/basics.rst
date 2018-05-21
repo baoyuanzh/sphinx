@@ -152,8 +152,7 @@ Doctest 块必须以一个空行结束，且 *不能* 在文末跟随一个未�
 表格
 ------
 
-For *grid tables* (:duref:`ref <grid-tables>`), you have to "paint" the cell
-grid yourself.  They look like this::
+关于使用 *表格* (:duref:`ref <grid-tables>`) ，你得自己“画” 格子。像下面这样子::
 
    +------------------------+------------+----------+----------+
    | Header row, column 1   | Header 2   | Header 3 | Header 4 |
@@ -164,9 +163,7 @@ grid yourself.  They look like this::
    | body row 2             | ...        | ...      |          |
    +------------------------+------------+----------+----------+
 
-*Simple tables* (:duref:`ref <simple-tables>`) are easier to write, but
-limited: they must contain more than one row, and the first column cells cannot
-contain multiple lines.  They look like this::
+*简单表单* (:duref:`ref <simple-tables>`) 就容易多了，但形式比较受限：必须有超过一行的内容，且第一行列的格子内不能有多行内容，它看起来像这样::
 
    =====  =====  =======
    A      B      A and B
@@ -177,34 +174,32 @@ contain multiple lines.  They look like this::
    True   True   True
    =====  =====  =======
 
-Two more syntaxes are supported: *CSV tables* and *List tables*. They use an
-*explicit markup block*. Refer to :ref:`table-directives` for more information.
+还有其他两种格式的表格： *CSV 表* and *列表 (List Tables)* .
+它们要用 *显式的标记块 (explicit markup block)* 。
+参考 :ref:`table-directives` 以获取更多信息。
 
 
 超链接
 ----------
 
-External links
+外部链接
 ~~~~~~~~~~~~~~
 
-Use ```Link text <https://domain.invalid/>`_`` for inline web links.  If the
-link text should be the web address, you don't need special markup at all, the
-parser finds links and mail addresses in ordinary text.
+用 ```Link text <https://domain.invalid/>`_`` 表示行内的网络连接。
+如果链接文字就是网址，那你就不需要使用任何特别的标记，因为 Sphinx 的分析器可以从普通文本中识别出网址和邮箱地址。
 
-.. important:: There must be a space between the link text and the opening \< for the URL.
+.. important:: 链接文字与包含 URL 的左开尖括号 \< 之间必须有一个空格。
 
-You can also separate the link and the target definition (:duref:`ref
-<hyperlink-targets>`), like this::
+你也可以将实际链接与目标定义分开放在两处 (:duref:`ref <hyperlink-targets>`)，比如这样::
 
-   This is a paragraph that contains `a link`_.
+   这段话包含 `a link`_.
 
    .. _a link: https://domain.invalid/
 
-Internal links
+内部链接
 ~~~~~~~~~~~~~~
 
-Internal linking is done via a special reST role provided by Sphinx, see the
-section on specific markup, :ref:`ref-role`.
+内部链接则需要使用由 Sphinx 提供的特殊 reST 角色来实现，请参看特殊标记那一节， :ref:`ref-role` 。
 
 
 章节
