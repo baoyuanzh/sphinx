@@ -229,12 +229,11 @@ Doctest 块必须以一个空行结束，且 *不能* 在文末跟随一个未�
 Field 列表
 -----------
 
-Field 列表 (:duref:`ref <field-lists>`) are sequences of fields marked up like
-this::
+Field 列表 (:duref:`ref <field-lists>`) 是按以下方式标记起来的一系列字段::
 
    :fieldname: Field content
 
-They are commonly used in Python documentation::
+在 Python 文档中它们很常用::
 
     def my_function(my_arg, my_other_arg):
         """A function just for me.
@@ -245,36 +244,30 @@ They are commonly used in Python documentation::
         :returns: A message (just for me, of course).
         """
 
-Sphinx extends standard docutils behavior and intercepts field lists specified
-at the beginning of documents.  Refer to :doc:`field-lists` for more
-information.
+Sphinx 扩展了 docutils 的标准行为并解释文档开头指出的 field 列表。
+请参考 :doc:`field-lists` 以获得更多信息。
 
-
-.. TODO This ref should be 'rst-roles', but that already exists. Rename the
-.. other ones
 
 .. _rst-roles-alt:
 
 角色
 -----
 
-A role or "custom interpreted text role" (:duref:`ref <roles>`) is an inline
-piece of explicit markup. It signifies that that the enclosed text should be
-interpreted in a specific way.  Sphinx uses this to provide semantic markup and
-cross-referencing of identifiers, as described in the appropriate section.  The
-general syntax is ``:rolename:`content```.
+角色或者说 "自定义如何解释的文本角色" (:duref:`ref <roles>`) 是一个显式标记的行内片段。
+它指出被界定的文本需要用一种特别的方式对待。
+于是 Sphinx 就用角色来提供语义标记以及交叉引用的标识，这些内容在对应的章节中说明。
+角色的一般语法是这样的 ``:rolename:`content``` 。
 
-Docutils supports the following roles:
+Docutils 支持以下角色：
 
-* :durole:`emphasis` -- equivalent of ``*emphasis*``
-* :durole:`strong` -- equivalent of ``**strong**``
-* :durole:`literal` -- equivalent of ````literal````
-* :durole:`subscript` -- subscript text
-* :durole:`superscript` -- superscript text
-* :durole:`title-reference` -- for titles of books, periodicals, and other
-  materials
+* :durole:`emphasis` -- 等同 ``*emphasis*``
+* :durole:`strong` -- 等同 ``**strong**``
+* :durole:`literal` -- 等同 ````literal````
+* :durole:`subscript` -- 下标文本
+* :durole:`superscript` -- 上标文本
+* :durole:`title-reference` -- 书本，期刊和其他一些资料的名称
 
-Refer to :doc:`roles` for roles added by Sphinx.
+想要了解由 Sphinx 添加的角色请参考 :doc:`roles` 。
 
 
 显式标记
