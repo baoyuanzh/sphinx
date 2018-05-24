@@ -273,15 +273,10 @@ Docutils 支持以下角色：
 显式标记
 ---------------
 
-"Explicit markup" (:duref:`ref <explicit-markup-blocks>`) is used in reST for
-most constructs that need special handling, such as footnotes,
-specially-highlighted paragraphs, comments, and generic directives.
+“显式标记” (:duref:`ref <explicit-markup-blocks>`) 用在大多数 reST 中需要特殊处理结构，比如脚注，特别突出的段落，注释和一般指令。
 
-An explicit markup block begins with a line starting with ``..`` followed by
-whitespace and is terminated by the next paragraph at the same level of
-indentation.  (There needs to be a blank line between explicit markup and
-normal paragraphs.  This may all sound a bit complicated, but it is intuitive
-enough when you write it.)
+一个显式标记块以 ``..`` 开头的一行开始，其后紧跟一个空格，并以下一个同等缩进级别的段落结束。
+（在显式标记和普通段落之间需用一个空行隔开。这看起来似乎有点复杂，但真正用起来的时候其实很自然。）
 
 
 .. _rst-directives:
