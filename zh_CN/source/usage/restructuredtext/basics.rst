@@ -203,32 +203,25 @@ Doctest 块必须以一个空行结束，且 *不能* 在文末跟随一个未�
 
 
 章节
---------
+---------
 
-Section headers (:duref:`ref <sections>`) are created by underlining (and
-optionally overlining) the section title with a punctuation character, at least
-as long as the text::
+章节标题 (:duref:`ref <sections>`) 可以通过在标题名称下方重复用标点字符划线（在上方则可划可不划）的方式创建，且字符线至少和标题一样长::
 
    =================
    This is a heading
    =================
 
-Normally, there are no heading levels assigned to certain characters as the
-structure is determined from the succession of headings.  However, this
-convention is used in `Python's Style Guide for documenting
-<https://docs.python.org/devguide/documenting.html#style-guide>`_ which you may
-follow:
+一般来讲，并没有特别规定哪种字符对应哪个级别的标题，因为标题的等级或者说文档的结构是按照标题出现的内在逻辑决定的。
+当然，你也可以遵循 `Python 文档风格指南 <https://docs.python.org/devguide/documenting.html#style-guide>`_ 所指定的习惯用法:
 
-* ``#`` with overline, for parts
-* ``*`` with overline, for chapters
-* ``=``, for sections
-* ``-``, for subsections
-* ``^``, for subsubsections
-* ``"``, for paragraphs
+* ``#`` 上下均划线表示 部
+* ``*`` 上下均划线表示 章
+* ``=``, 表示 节
+* ``-``, 表示 子节
+* ``^``, 表示 子子节
+* ``"``, 表示 段落
 
-Of course, you are free to use your own marker characters (see the reST
-documentation), and use a deeper nesting level, but keep in mind that most
-target formats (HTML, LaTeX) have a limited supported nesting depth.
+当然，你可以自由选择你想用的标记字符（参考 reST 文档），并使用更深层次的嵌套等级，但值得注意的是大多数目标文档的格式 (HTML, LaTeX) 仅支持有限的嵌套深度。
 
 
 .. _rst-field-lists:
@@ -236,7 +229,7 @@ target formats (HTML, LaTeX) have a limited supported nesting depth.
 Field 列表
 -----------
 
-Field lists (:duref:`ref <field-lists>`) are sequences of fields marked up like
+Field 列表 (:duref:`ref <field-lists>`) are sequences of fields marked up like
 this::
 
    :fieldname: Field content
