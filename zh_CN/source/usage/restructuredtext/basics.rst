@@ -284,74 +284,63 @@ Docutils 支持以下角色：
 指令
 ----------
 
-A directive (:duref:`ref <directives>`) is a generic block of explicit markup.
-Along with roles, it is one of the extension mechanisms of reST, and Sphinx
-makes heavy use of it.
+指令 (:duref:`ref <directives>`) 是一个一般的显式标记块。
+和角色 (roles) 一样，它是 reST 的扩展机制之一， Sphinx 极大的利用了这一点。
 
-Docutils supports the following directives:
+Docutils 支持以下指令：
 
-* Admonitions: :dudir:`attention`, :dudir:`caution`, :dudir:`danger`,
+* 警告： :dudir:`attention`, :dudir:`caution`, :dudir:`danger`,
   :dudir:`error`, :dudir:`hint`, :dudir:`important`, :dudir:`note`,
-  :dudir:`tip`, :dudir:`warning` and the generic
-  :dudir:`admonition <admonitions>`.  (Most themes style only "note" and
-  "warning" specially.)
+  :dudir:`tip`, :dudir:`warning` 和通用
+  :dudir:`admonition <admonitions>` 。（大多数主题只有 "note" 和 "warning" 有特别的样式）
 
 * Images:
 
-  - :dudir:`image` (see also Images_ below)
-  - :dudir:`figure` (an image with caption and optional legend)
+  - :dudir:`image` （参考下面的 Images_ )
+  - :dudir:`figure` (带有标题和可选例图的图)
 
-* Additional body elements:
+* 额外的 body 元素：
 
-  - :dudir:`contents <table-of-contents>` (a local, i.e. for the current file
-    only, table of contents)
-  - :dudir:`container` (a container with a custom class, useful to generate an
-    outer ``<div>`` in HTML)
-  - :dudir:`rubric` (a heading without relation to the document sectioning)
-  - :dudir:`topic`, :dudir:`sidebar` (special highlighted body elements)
-  - :dudir:`parsed-literal` (literal block that supports inline markup)
-  - :dudir:`epigraph` (a block quote with optional attribution line)
-  - :dudir:`highlights`, :dudir:`pull-quote` (block quotes with their own
-    class attribute)
-  - :dudir:`compound <compound-paragraph>` (a compound paragraph)
+  - :dudir:`contents <table-of-contents>` （一个本地的，即，只针对当前文档的一个目录表）
+  - :dudir:`container` （一个可自定义类的容器，在 HTML 中生成一个外层的 ``<div>`` 很实用）
+  - :dudir:`rubric` （与本节文档无关的一个栏目）
+  - :dudir:`topic`, :dudir:`sidebar` （特别突出的 body 元素）
+  - :dudir:`parsed-literal` （支持行内标记的字面块）
+  - :dudir:`epigraph` （带有可选属性行的块引用）
+  - :dudir:`highlights`, :dudir:`pull-quote` （带有自己的类属性的块引用）
+  - :dudir:`compound <compound-paragraph>` （复合段落）
 
-* Special tables:
+* 特殊表格：
 
-  - :dudir:`table` (a table with title)
-  - :dudir:`csv-table` (a table generated from comma-separated values)
-  - :dudir:`list-table` (a table generated from a list of lists)
+  - :dudir:`table` （有标题的表格）
+  - :dudir:`csv-table` （由逗号分隔值生成的表格）
+  - :dudir:`list-table` （由列表的列表生成的表格）
 
-* Special directives:
+* 特殊指令：
 
-  - :dudir:`raw <raw-data-pass-through>` (include raw target-format markup)
-  - :dudir:`include` (include reStructuredText from another file) -- in Sphinx,
-    when given an absolute include file path, this directive takes it as
-    relative to the source directory
-  - :dudir:`class` (assign a class attribute to the next element) [1]_
+  - :dudir:`raw <raw-data-pass-through>` （包含未加工的目标格式的标记）
+  - :dudir:`include` （包含另一个 reStructuredText 文档） -- 在 Sphinx 中，当给出一个要包含的文件的绝对路径，这个指令将它作为相对源目录的相对路径。
+  - :dudir:`class` （给下一个元素指定一个类属性） [1]_
 
-* HTML specifics:
+* HTML 说明:
 
-  - :dudir:`meta` (generation of HTML ``<meta>`` tags)
-  - :dudir:`title <metadata-document-title>` (override document title)
+  - :dudir:`meta` （生成 HTML ``<meta>`` 标签）
+  - :dudir:`title <metadata-document-title>` （覆盖文档标题）
 
-* Influencing markup:
+* 影响标记：
 
-  - :dudir:`default-role` (set a new default role)
-  - :dudir:`role` (create a new role)
+  - :dudir:`default-role` （设定一个默认角色）
+  - :dudir:`role` （创建一个新的角色）
 
-  Since these are only per-file, better use Sphinx's facilities for setting the
-  :confval:`default_role`.
+  因为这些设定的范围仅仅是单个的文件，所以最好是用 Sphinx 的配置功能来设定 :confval:`default_role` 。
 
 .. warning::
 
-   Do *not* use the directives :dudir:`sectnum`, :dudir:`header` and
-   :dudir:`footer`.
+   *不要* 使用以下指令 :dudir:`sectnum` ， :dudir:`header` 和 :dudir:`footer` 。
 
-Directives added by Sphinx are described in :doc:`directives`.
+由 Sphinx 添加的指令在 :doc:`directives` 中有说明。
 
-Basically, a directive consists of a name, arguments, options and content.
-(Keep this terminology in mind, it is used in the next chapter describing
-custom directives.)  Looking at this example, ::
+基本上，一个指令包括名称，参数，可选项和内容等部分。（记住这些术语，在下一章介绍自定义指令时会用到）见如下例子::
 
    .. function:: foo(x)
                  foo(y, z)
@@ -359,14 +348,9 @@ custom directives.)  Looking at this example, ::
 
       Return a line of text input from the user.
 
-``function`` is the directive name.  It is given two arguments here, the
-remainder of the first line and the second line, as well as one option
-``module`` (as you can see, options are given in the lines immediately
-following the arguments and indicated by the colons).  Options must be indented
-to the same level as the directive content.
+``function`` 是指令名称。这里有两个参数，分别是余下部分的第一行和第二行，以及一个可选项 ``module`` （如你所见，可选项由紧跟参数的行给出，且由冒号标明）。可选项必须和指令内容保持相同的缩进。
 
-The directive content follows after a blank line and is indented relative to
-the directive start.
+指令的内容在一个空行后开始且与指令开头保持相同的缩进。
 
 
 图片
