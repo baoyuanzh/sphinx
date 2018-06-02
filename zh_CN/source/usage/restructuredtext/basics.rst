@@ -432,7 +432,7 @@ reST 支持 "替代" (:duref:`ref <substitution-definitions>`) 模式，它们�
    .. |caution| image:: warning.png
                 :alt: Warning!
 
-细节请参考 :duref:`reST reference for substitutions <substitution-definitions>` 。
+细节请阅读 :duref:`reST 替代之参考 <substitution-definitions>` 。
 
 .. index:: ! pair: global; substitutions
 
@@ -473,9 +473,9 @@ Sphinx 默认为源文件是由 UTF-8 方式编码的；你可以用配置值 :c
 * **分离行内标记：** 如同已说明的那样，行内标记块必须用 non-word 字符与周围的文本隔开，你必须使用反斜杠转义来绕过这一规则。
   细节请参考 :duref:`这里 <substitution-definitions>` 。
 
-* **无嵌套行内标记：** 像这样 ``*see :func:`foo`*`` 的行内标记是不可能的。
+* **行内标记不可嵌套：** 像这样 ``*see :func:`foo`*`` 的行内标记是不允许的。
 
 
 .. rubric:: Footnotes
 
-.. [1] 当默认域包含一个 :rst:dir:`class` 指令时，这个指令会被覆盖。因此，Sphinx 又将其导出为 :rst:dir:`rst-class` 指令。
+.. [1] 当默认域包含一个 :rst:dir:`class` 指令时，这个指令会被覆盖。因此，Sphinx 重新将其导出为 :rst:dir:`rst-class` 指令。
