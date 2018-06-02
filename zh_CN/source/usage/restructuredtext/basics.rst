@@ -319,7 +319,7 @@ Docutils 支持以下指令：
 * 特殊指令：
 
   - :dudir:`raw <raw-data-pass-through>` （包含未加工的目标格式的标记）
-  - :dudir:`include` （包含另一个 reStructuredText 文档） -- 在 Sphinx 中，当给出一个要包含的文件的绝对路径，这个指令将它作为相对源目录的相对路径。
+  - :dudir:`include` （包含另一个 reStructuredText 文档） -- 在 Sphinx 中，当给出一个要包含的文件的绝对路径时，这个指令将它作为相对于顶层源目录的路径处理。
   - :dudir:`class` （给下一个元素指定一个类属性） [1]_
 
 * HTML 说明:
@@ -356,49 +356,39 @@ Docutils 支持以下指令：
 图片
 ------
 
-reST supports an image directive (:dudir:`ref <image>`), used like so::
+reST 支持一个 image 指令 (:dudir:`ref <image>`)，按如下方式使用::
 
    .. image:: gnu.png
       (options)
 
-When used within Sphinx, the file name given (here ``gnu.png``) must either be
-relative to the source file, or absolute which means that they are relative to
-the top source directory.  For example, the file ``sketch/spam.rst`` could
-refer to the image ``images/spam.png`` as ``../images/spam.png`` or
-``/images/spam.png``.
+在 Sphinx 中使用时，文件名（这里是 ``gnu.png`` ）要么使用相对当前文件的相对路径，要么使用相对顶层源目录的绝对路径。
+比如文件 ``sketch/spam.rst`` 可以用 ``../images/spam.png`` 和 ``/images/spam.png`` 来引用图片 ``images/spam.png`` 。
 
-Sphinx will automatically copy image files over to a subdirectory of the output
-directory on building (e.g. the ``_static`` directory for HTML output.)
+Sphinx 在构建目标文档时会自动将图片文件拷贝到输出目录相应的子文件夹中。（比如 HTML 格式输出的 ``_static`` 目录。）
 
-Interpretation of image size options (``width`` and ``height``) is as follows:
-if the size has no unit or the unit is pixels, the given size will only be
-respected for output channels that support pixels. Other units (like ``pt`` for
-points) will be used for HTML and LaTeX output (the latter replaces ``pt`` by
-``bp`` as this is the TeX unit such that ``72bp=1in``).
+图像大小的可选项（ ``width`` 和 ``height`` ）解释如下：
+如果大小没有单位或单位是像素，仅在输出目标格式支持像素的情况下，可选项大小的值才有意义。
+其他单位（比如表示 points 的 ``pt``）可以在生成 HTML 和 LaTeX 输出时使用，（后者将 ``pt`` 替换为 ``bp`` ，而这是 TeX 单位， ``72bp=1in`` ）。
 
-Sphinx extends the standard docutils behavior by allowing an asterisk for the
-extension::
+Sphinx 以允许星号代表扩展名的方式扩展了标准 docutils 的行为::
 
    .. image:: gnu.*
 
-Sphinx then searches for all images matching the provided pattern and
-determines their type.  Each builder then chooses the best image out of these
-candidates.  For instance, if the file name ``gnu.*`` was given and two files
-:file:`gnu.pdf` and :file:`gnu.png` existed in the source tree, the LaTeX
-builder would choose the former, while the HTML builder would prefer the
-latter.  Supported image types and choosing priority are defined at
-:ref:`builders`.
+Sphinx 在这种情况下会搜索所有符合给定模式的图像文件并判断其格式。
+每一个构建器选择可选的最佳的图片， 如果给出的文件名是 ``gnu.*`` ，有两个文件
+:file:`gnu.pdf` 和 :file:`gnu.png` 存在于源目录中， LaTeX 构建起将选择前者，而 HTML 构建起器则偏向于后者。
+各构件器支持的图像类型以及优先级定义在 :ref:`builders` 中。
 
-Note that image file names should not contain spaces.
+注意图像文件名不可以包含空格。
 
 .. versionchanged:: 0.4
-   Added the support for file names ending in an asterisk.
+   添加支持以星号结尾的文件名。
 
 .. versionchanged:: 0.6
-   Image paths can now be absolute.
+   可以使用绝对路径来引用图像文件了。
 
 .. versionchanged:: 1.5
-   latex target supports pixels (default is ``96px=1in``).
+   latex 目标个事支持像素（默认为 ``96px=1in``）。
 
 
 脚注
