@@ -388,15 +388,13 @@ Sphinx 在这种情况下会搜索所有符合给定模式的图像文件并判�
    可以使用绝对路径来引用图像文件了。
 
 .. versionchanged:: 1.5
-   latex 目标个事支持像素（默认为 ``96px=1in``）。
+   latex 目标格式支持像素单位了（默认为 ``96px=1in``）。
 
 
 脚注
 ---------
 
-For footnotes (:duref:`ref <footnotes>`), use ``[#name]_`` to mark the footnote
-location, and add the footnote body at the bottom of the document after a
-"Footnotes" rubric heading, like so::
+脚注 (:duref:`ref <footnotes>`), 使用 ``[#name]_`` 来标记， 并在文档末尾的 "Footnotes" 栏目标题下添加脚注内容，像这样::
 
    Lorem ipsum [#f1]_ dolor sit amet ... [#f2]_
 
@@ -405,8 +403,7 @@ location, and add the footnote body at the bottom of the document after a
    .. [#f1] Text of the first footnote.
    .. [#f2] Text of the second footnote.
 
-You can also explicitly number the footnotes (``[1]_``) or use auto-numbered
-footnotes without names (``[#]_``).
+你也可以显式地指定脚注序号 (``[1]_``) 或使用没有名字的自动序号脚注 (``[#]_``) 。
 
 
 引用
