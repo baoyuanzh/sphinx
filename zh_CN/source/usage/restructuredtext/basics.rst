@@ -409,16 +409,14 @@ Sphinx 在这种情况下会搜索所有符合给定模式的图像文件并判�
 引用
 ---------
 
-Standard reST citations (:duref:`ref <citations>`) are supported, with the
-additional feature that they are "global", i.e. all citations can be referenced
-from all files.  Use them like so::
+标准的 reST 的引用 (:duref:`ref <citations>`) 不仅被支持，还特有额外的全局特性，也就是说，所有的引用可以在任意文件中跨文件文件使用。
+使用方式如下::
 
    Lorem ipsum [Ref]_ dolor sit amet.
 
    .. [Ref] Book or article reference, URL or whatever.
 
-Citation usage is similar to footnote usage, but with a label that is not
-numeric or begins with ``#``.
+引用的使用方式很像脚注，但他的标签不能以数字或井号 ``#`` 开头。
 
 
 替换
