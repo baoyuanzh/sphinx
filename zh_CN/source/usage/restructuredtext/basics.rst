@@ -469,10 +469,8 @@ You can indent text after a comment start to form multiline comments::
 源编码
 ---------------
 
-Since the easiest way to include special characters like em dashes or copyright
-signs in reST is to directly write them as Unicode characters, one has to
-specify an encoding.  Sphinx assumes source files to be encoded in UTF-8 by
-default; you can change this with the :confval:`source_encoding` config value.
+在 Sphinx 中书写特殊字符，比如短划线，或版权符号，的最简单方式是直接将它们写作 Unicode 字符，因此必须指定一种编码方式。
+Sphinx 默认为源文件是由 UTF-8 方式编码的；你可以用配置值 :confval:`source_encoding` 来自定义该行为。
 
 
 常见问题
