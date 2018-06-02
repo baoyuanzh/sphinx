@@ -419,33 +419,27 @@ Sphinx 在这种情况下会搜索所有符合给定模式的图像文件并判�
 引用的使用方式很像脚注，但他的标签不能以数字或井号 ``#`` 开头。
 
 
-替换
+替代
 -------------
 
-reST supports "substitutions" (:duref:`ref <substitution-definitions>`), which
-are pieces of text and/or markup referred to in the text by ``|name|``.  They
-are defined like footnotes with explicit markup blocks, like this::
+reST 支持 "替代" (:duref:`ref <substitution-definitions>`) 模式，它们是在文本中以 ``|name|`` 方式来表达的文本和/或标记。
+它们的定义方式如同脚注一般需要一个显式的标记块，如下::
 
    .. |name| replace:: replacement *text*
 
-or this::
+或如下::
 
    .. |caution| image:: warning.png
                 :alt: Warning!
 
-See the :duref:`reST reference for substitutions <substitution-definitions>`
-for details.
+细节请参考 :duref:`reST reference for substitutions <substitution-definitions>` 。
 
 .. index:: ! pair: global; substitutions
 
-If you want to use some substitutions for all documents, put them into
-:confval:`rst_prolog` or :confval:`rst_epilog` or put them into a separate file
-and include it into all documents you want to use them in, using the
-:rst:dir:`include` directive.  (Be sure to give the include file a file name
-extension differing from that of other source files, to avoid Sphinx finding it
-as a standalone document.)
+如果你需要使用对于整个文档来说全局范围的替换，就将它们放到配置 :confval:`rst_prolog` 或 :confval:`rst_epilog` 或一个单独的文件中，并用 :rst:dir:`include` 指令将其包含在每一个你想要使用它们的文件中。
+（请确保使用一个不同于其他源文件的扩展名给那个要包含的文件，以避免 Sphinx 将其作为一个单独的源文件。）
 
-Sphinx defines some default substitutions, see :ref:`default-substitutions`.
+Sphinx 定义了一些默认替代，参考 :ref:`default-substitutions` 。
 
 
 注释
@@ -474,7 +468,7 @@ Sphinx 默认为源文件是由 UTF-8 方式编码的；你可以用配置值 :c
 常见问题
 -------
 
-There are some problems one commonly runs into while authoring reST documents:
+撰写 reST 文档时时常会遇到的一些问题：
 
 * **Separation of inline markup:** As said above, inline markup spans must be
   separated from the surrounding text by non-word characters, you have to use a
