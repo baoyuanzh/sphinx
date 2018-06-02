@@ -470,17 +470,12 @@ Sphinx 默认为源文件是由 UTF-8 方式编码的；你可以用配置值 :c
 
 撰写 reST 文档时时常会遇到的一些问题：
 
-* **Separation of inline markup:** As said above, inline markup spans must be
-  separated from the surrounding text by non-word characters, you have to use a
-  backslash-escaped space to get around that.  See :duref:`the reference
-  <substitution-definitions>` for the details.
+* **分离行内标记：** 如同已说明的那样，行内标记块必须用 non-word 字符与周围的文本隔开，你必须使用反斜杠转义来绕过这一规则。
+  细节请参考 :duref:`这里 <substitution-definitions>` 。
 
-* **No nested inline markup:** Something like ``*see :func:`foo`*`` is not
-  possible.
+* **无嵌套行内标记：** 像这样 ``*see :func:`foo`*`` 的行内标记是不可能的。
 
 
 .. rubric:: Footnotes
 
-.. [1] When the default domain contains a :rst:dir:`class` directive, this
-       directive will be shadowed.  Therefore, Sphinx re-exports it as
-       :rst:dir:`rst-class`.
+.. [1] 当默认域包含一个 :rst:dir:`class` 指令时，这个指令会被覆盖。因此，Sphinx 又将其导出为 :rst:dir:`rst-class` 指令。
