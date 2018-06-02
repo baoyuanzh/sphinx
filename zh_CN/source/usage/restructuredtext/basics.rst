@@ -451,13 +451,11 @@ Sphinx defines some default substitutions, see :ref:`default-substitutions`.
 注释
 --------
 
-Every explicit markup block which isn't a valid markup construct (like the
-footnotes above) is regarded as a comment (:duref:`ref <comments>`).  For
-example::
+每一个表示无效标记结构的显式标记块（如上述的脚注块）都被当做是一个注释 (:duref:`ref <comments>`) 。比如::
 
    .. This is a comment.
 
-You can indent text after a comment start to form multiline comments::
+你也可以在注释开始后用缩进文本的方式来书写一个多行注释::
 
    ..
       This whole indented block
